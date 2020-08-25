@@ -7,6 +7,40 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="3" Content="Input web address" Name="lblInputWebAddress"  Padding="0" HorizontalAlignment="Right"/>
+        <TextBox Grid.Column="3" Grid.Row="3" Name="txtWebAddress"  Height="20" Width="150"/>
+        <Button Grid.Column="5" Grid.Row="3" Name="btnSaveHtml" Content="Save" IsEnabled="True" Height="20" 
+                Width="120" HorizontalAlignment="Left"
+                Click="btnSaveHtml_Click"
+                />
+        <Button Grid.Column="7" Grid.Row="3" Name="btnZipFile" Content="Zip" IsEnabled="True" Height="20" 
+                Width="120" HorizontalAlignment="Left"
+                Click="btnZipFile_Click"
+                />
     </Grid>
 </Window>
