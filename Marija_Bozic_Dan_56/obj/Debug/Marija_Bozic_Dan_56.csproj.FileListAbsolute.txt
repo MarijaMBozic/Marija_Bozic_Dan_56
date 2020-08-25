@@ -1,0 +1,15 @@
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\bin\Debug\Marija_Bozic_Dan_56.exe.config
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\bin\Debug\Marija_Bozic_Dan_56.exe
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\bin\Debug\Marija_Bozic_Dan_56.pdb
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.csprojAssemblyReference.cache
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\MainWindow.g.cs
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\App.g.cs
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56_MarkupCompile.cache
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56_MarkupCompile.lref
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\MainWindow.baml
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.g.resources
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.Properties.Resources.resources
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.csproj.GenerateResource.cache
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.csproj.CoreCompileInputs.cache
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.exe
+C:\Users\milan\Desktop\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\Marija_Bozic_Dan_56\obj\Debug\Marija_Bozic_Dan_56.pdb
