@@ -37,17 +37,18 @@ namespace Marija_Bozic_Dan_56
 
             using (WebClient client = new WebClient())
             {
+                string dateTime = DateTime.Now.ToString("ddMMyyyyhhmmss");
                 try
                 {
                     if (txtWebAddress.Text.StartsWith("www"))
                     {
-                        client.DownloadFile(string.Format("http://{0}", txtWebAddress.Text), string.Format(@"C:..\..\FilesHTML\{0}.html", fileName));
-                        MessageBox.Show("You have successfully saved the web page as html file ");
+                        client.DownloadFile(string.Format("http://{0}", txtWebAddress.Text), string.Format(@"C:..\..\FilesHTML\{0}_{1}.html", fileName, dateTime));
+                        MessageBox.Show("You have successfully saved the web page as html file! ");
                     }
                     else if(txtWebAddress.Text.StartsWith("http"))
                     {
-                        client.DownloadFile(txtWebAddress.Text, string.Format(@"C:..\..\FilesHTML\{0}.html", fileName));
-                        MessageBox.Show("You have successfully saved the web page as html file ");
+                        client.DownloadFile(txtWebAddress.Text, string.Format(@"C:..\..\FilesHTML\{0}_{1}.html", fileName, dateTime));
+                        MessageBox.Show("You have successfully saved the web page as html file!");
                     }
                     
                 }
@@ -93,10 +94,10 @@ namespace Marija_Bozic_Dan_56
                 lblValidationInputWebAddress.Visibility = Visibility.Visible;
                 lblValidationInputWebAddress.FontSize = 16;
                 lblValidationInputWebAddress.Foreground = new SolidColorBrush(Colors.Red);
-                lblValidationInputWebAddress.Content = "Web address is must be in valid form!";
+                lblValidationInputWebAddress.Content = "Web address must be in valid form \n(http(s)://example.com or \nwww.example.com)!";
             }
            
-            string patternUrl = @"^(http|http(s)?://)?([\w-]+\.)+[\w-]+[a-zA-z]+(\[\?%&=]*)?$";
+            string patternUrl = @"^(http|http(s)?://)?([\w-]+\.)+[\w-]+[a-zA-Z0-9]+(\[\?%&=]*)?$";
             Match match = Regex.Match(txtWebAddress.Text, patternUrl, RegexOptions.IgnoreCase);
             
             if (!match.Success)
