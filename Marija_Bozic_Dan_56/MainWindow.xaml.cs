@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +24,7 @@ namespace Marija_Bozic_Dan_56
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isValidAddress;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,16 +37,83 @@ namespace Marija_Bozic_Dan_56
 
             using (WebClient client = new WebClient())
             {
-                client.DownloadFile(txtWebAddress.Text, string.Format(@"C:..\..\FilesHTML\{0}.html", fileName));
+                try
+                {
+                    if (txtWebAddress.Text.StartsWith("www"))
+                    {
+                        client.DownloadFile(string.Format("http://{0}", txtWebAddress.Text), string.Format(@"C:..\..\FilesHTML\{0}.html", fileName));
+                        MessageBox.Show("You have successfully saved the web page as html file ");
+                    }
+                    else if(txtWebAddress.Text.StartsWith("http"))
+                    {
+                        client.DownloadFile(txtWebAddress.Text, string.Format(@"C:..\..\FilesHTML\{0}.html", fileName));
+                        MessageBox.Show("You have successfully saved the web page as html file ");
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }                
             }
         }
 
         private void btnZipFile_Click(object sender, RoutedEventArgs e)
         {
-            using (ZipArchive zip = ZipFile.Open("test.zip", ZipArchiveMode.Create))
+            try
             {
-                zip.CreateEntryFromFile(@"C:..\..\FilesHTML\blic.html", @"C:..\..\ZipFile\blic.html");
+                string startPath = @"C:..\..\FilesHTML\";
+                string dateTime =DateTime.Now.ToString("ddMMyyyyhhmmss");
+                string zipPath =string.Format(@"C:..\..\ZipFile\result{0}.zip", dateTime);
+                ZipFile.CreateFromDirectory(startPath, zipPath);
+                MessageBox.Show("You have successfully zipped the folder!");
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void IsDownloadHTMLEnabled()
+        {
+            if (isValidAddress)
+            {
+                btnSaveHtml.IsEnabled = true;
+            }
+            else
+            {
+                btnSaveHtml.IsEnabled = false;
+            }
+        }
+
+        private void txtWebAddress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtWebAddress.Focus())
+            {
+                lblValidationInputWebAddress.Visibility = Visibility.Visible;
+                lblValidationInputWebAddress.FontSize = 16;
+                lblValidationInputWebAddress.Foreground = new SolidColorBrush(Colors.Red);
+                lblValidationInputWebAddress.Content = "Web address is must be in valid form!";
+            }
+           
+            string patternUrl = @"^(http|http(s)?://)?([\w-]+\.)+[\w-]+[a-zA-z]+(\[\?%&=]*)?$";
+            Match match = Regex.Match(txtWebAddress.Text, patternUrl, RegexOptions.IgnoreCase);
+            
+            if (!match.Success)
+            {
+                txtWebAddress.BorderBrush = new SolidColorBrush(Colors.Red);
+                txtWebAddress.Foreground = new SolidColorBrush(Colors.Red);
+                isValidAddress = false;
+            }
+            else
+            {
+                lblValidationInputWebAddress.Visibility = Visibility.Hidden;
+                txtWebAddress.BorderBrush = new SolidColorBrush(Colors.Black);
+                txtWebAddress.Foreground = new SolidColorBrush(Colors.Black);
+                isValidAddress = true;
+            }
+            IsDownloadHTMLEnabled();
         }
     }
 }
+
